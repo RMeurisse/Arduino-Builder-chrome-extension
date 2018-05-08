@@ -4,7 +4,7 @@ var uploader = require('./lib/flash');
 chrome.runtime.onConnectExternal.addListener(function(port) {
 	port.onMessage.addListener(function(msg) {
 		// call flash process
-		uploader.flash(msg.board, msg.file, function(error) {
+		uploader.flash(msg.board, msg.port, msg.file, function(error) {
 			// prepare the response object
 			var message = error ? {error: error.message} : {success: true};
 			// send back the status of the flash to the webpage so it knows when it's done/errored.
@@ -21,6 +21,12 @@ chrome.runtime.onMessageExternal.addListener(
 				type: 'success'
 			});
 			return true;
+		} else if (message == 'ports') {
+			uploader.listPorts(function(error, ports) {
+				var message = error ? {error: error.message} : ports;				
+				sendResponse({message});
+			});
+			return true;		
 		}
 	}
 );
