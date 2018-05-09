@@ -12,5 +12,5 @@
     "matches": ["http://127.0.0.1:*/*", "*://blokkencode.ingegno.be:*/*", "*://localhost:*/*"]
   },
   "permissions": ["serial"],
-  "icons": { "16": "favicon3.png", "128": "icon_128.png" }
+  "icons": { "16": "icon_16.png", "128": "icon_128.png" }
 }
