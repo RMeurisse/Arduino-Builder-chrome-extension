@@ -7,7 +7,7 @@
     "scripts": ["background.bundle.js"]
   },
   "externally_connectable": {
-    "matches": ["*://blokkencode.ingegno.be:*/*"]
+    "matches": ["http://127.0.0.1:*/*", "*://blokkencode.ingegno.be:*/*", "*://localhost:*/*"]
   },
   "permissions": ["serial"],
   "icons": { "16": "icon_16.png", "128": "icon_128.png" }
