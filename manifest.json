@@ -1,15 +1,13 @@
 {
-  "name": "Arduino-Builder Chrome Extension",
+  "name": "Blockly4Arduino Compiler Chrome Extension",
   "description": "Chrome extension to flash devices from the browser",
   "version": "0.1",
   "manifest_version": 2,
-  "app": {
-    "background": {
-      "scripts": ["background.bundle.js"]
-    }
+  "background": {
+    "scripts": ["background.bundle.js"]
   },
   "externally_connectable": {
-    "matches": ["http://127.0.0.1:*/*", "*://blokkencode.ingegno.be:*/*", "*://localhost:*/*"]
+    "matches": ["*://blokkencode.ingegno.be:*/*"]
   },
   "permissions": ["serial"],
   "icons": { "16": "icon_16.png", "128": "icon_128.png" }
